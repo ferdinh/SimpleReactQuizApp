@@ -2,7 +2,7 @@ import DOMPurify from "dompurify";
 import React, {useState} from "react";
 import {Button} from "reactstrap";
 
-export default function QuestionCard(props: { questionNumber: number, question: string, possible_answers: string[], correctAnswerIndex: number }) {
+export default function QuestionCard(props: { questionNumber: number, question: string, possible_answers: string[], correctAnswerIndex: number, onUserAnswer: (correctly: boolean) =>void }) {
     const CHAR = 'ABCD';
 
     const [isUserAnswered, setIsUserAnswered] = useState(false);
@@ -15,6 +15,7 @@ export default function QuestionCard(props: { questionNumber: number, question: 
 
         if (props.correctAnswerIndex === answerId) {
             setUserAnsweredCorrectly(true);
+            props.onUserAnswer(true);
         }
     }
 
