@@ -7,7 +7,6 @@ import QuestionCard from "./QuestionCard";
 
 export default function QuestionList(props: { listOfQuestions: Question[] }) {
     const [questionList, setQuestionList] = useState<Question[]>([]);
-    const CHAR = 'ABCD';
     
     useEffect(() => {
         setQuestionList(props.listOfQuestions);
