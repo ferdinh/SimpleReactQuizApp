@@ -7,7 +7,7 @@ import QuestionCard from "./QuestionCard";
 
 export default function QuestionList(props: { listOfQuestions: Question[] }) {
     const [questionList, setQuestionList] = useState<Question[]>([]);
-    
+
     useEffect(() => {
         setQuestionList(props.listOfQuestions);
     }, [props.listOfQuestions])
@@ -15,7 +15,9 @@ export default function QuestionList(props: { listOfQuestions: Question[] }) {
     return (
         <div>
             {questionList.map((question, id) => (
-                <QuestionCard questionNumber={id + 1} question={DOMPurify.sanitize(question.question)} possible_answers={question.possible_answers} />
+                <QuestionCard key={id} questionNumber={id + 1} question={question.question}
+                              possible_answers={question.possible_answers}
+                              correctAnswerIndex={question.correct_answer_index}/>
             ))}
         </div>
     )
