@@ -2,6 +2,7 @@ import {QuestionRequestResult} from "../interface/QuestionRequestResult";
 import React, {useEffect, useState} from "react";
 import DOMPurify from 'dompurify';
 import Question from "../model/Question";
+import QuestionCard from "./QuestionCard";
 
 
 export default function QuestionList(props: { listOfQuestions: Question[] }) {
@@ -15,16 +16,7 @@ export default function QuestionList(props: { listOfQuestions: Question[] }) {
     return (
         <div>
             {questionList.map((question, id) => (
-                <div key={id}>
-                    <h3 dangerouslySetInnerHTML={{__html: `${id + 1}. ${DOMPurify.sanitize(question.question)}`}}></h3>
-                    <ul className="Answer-list">
-                        {question.possible_answers.map((answer, idx) => (
-                            <li key={`answer-${idx}`}>
-                                <button dangerouslySetInnerHTML={{__html: `${CHAR[idx]}. ${DOMPurify.sanitize(answer)}`}}></button>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                <QuestionCard questionNumber={id + 1} question={DOMPurify.sanitize(question.question)} possible_answers={question.possible_answers} />
             ))}
         </div>
     )
