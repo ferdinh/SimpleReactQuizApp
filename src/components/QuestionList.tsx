@@ -1,13 +1,18 @@
-import {QuestionRequestResult} from "../interface/QuestionRequestResult";
 import React, {useEffect, useState} from "react";
-import DOMPurify from 'dompurify';
 import Question from "../model/Question";
+import QuestionCard from "./QuestionCard";
 
 
 export default function QuestionList(props: { listOfQuestions: Question[] }) {
     const [questionList, setQuestionList] = useState<Question[]>([]);
-    const CHAR = 'ABCD';
-    
+    const [correctAnswer, setCorrectAnswer] = useState(0);
+
+    function onUserAnswer(correctly: boolean) {
+        if (correctly) {
+            setCorrectAnswer(correctAnswer + 1);
+        }
+    }
+
     useEffect(() => {
         setQuestionList(props.listOfQuestions);
     }, [props.listOfQuestions])
@@ -15,17 +20,13 @@ export default function QuestionList(props: { listOfQuestions: Question[] }) {
     return (
         <div>
             {questionList.map((question, id) => (
-                <div key={id}>
-                    <h3 dangerouslySetInnerHTML={{__html: `${id + 1}. ${DOMPurify.sanitize(question.question)}`}}></h3>
-                    <ul className="Answer-list">
-                        {question.possible_answers.map((answer, idx) => (
-                            <li key={`answer-${idx}`}>
-                                <button dangerouslySetInnerHTML={{__html: `${CHAR[idx]}. ${DOMPurify.sanitize(answer)}`}}></button>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                <QuestionCard key={id} questionNumber={id + 1} question={question.question}
+                              possible_answers={question.possible_answers}
+                              correctAnswerIndex={question.correct_answer_index}
+                              onUserAnswer={onUserAnswer}
+                />
             ))}
+            <p>{questionList.length !== 0 ? `Score: ${correctAnswer}/${questionList.length}` : ''} </p>
         </div>
     )
 }
