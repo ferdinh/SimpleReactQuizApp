@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Simple React Quiz App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This app can be access at [https://ferdinh.github.io/SimpleReactQuizApp/](https://ferdinh.github.io/SimpleReactQuizApp/)  
 
 ## Available Scripts
 
