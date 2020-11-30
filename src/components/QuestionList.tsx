@@ -23,11 +23,15 @@ export default function QuestionList(props: { listOfQuestions: Question[] }) {
             <Row className='justify-content-center'>
                 <Col xs={12} md={6} lg={6}>
                     {questionList.map((question, id) => (
-                        <QuestionCard key={id} questionNumber={id + 1} question={question.question}
-                                      possible_answers={question.possible_answers}
-                                      correctAnswerIndex={question.correct_answer_index}
-                                      onUserAnswer={onUserAnswer}
-                        />
+                        <Row className='mb-3'>
+                            <Col>
+                                <QuestionCard key={id} questionNumber={id + 1} question={question.question}
+                                              possible_answers={question.possible_answers}
+                                              correctAnswerIndex={question.correct_answer_index}
+                                              onUserAnswer={onUserAnswer}
+                                />
+                            </Col>
+                        </Row>
                     ))}
                 </Col>
             </Row>
