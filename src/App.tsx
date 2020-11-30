@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import {QuestionRequestResult} from "./interface/QuestionRequestResult";
+import BackgroundImage from './images/bg-image.jpg';
 import QuestionList from "./components/QuestionList";
 import Question from "./model/Question";
 
