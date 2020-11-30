@@ -2,7 +2,7 @@ import DOMPurify from "dompurify";
 import React, {useState} from "react";
 import {Button, Card, CardBody, CardHeader, Container} from "reactstrap";
 
-export default function QuestionCard(props: { questionNumber: number, question: string, possible_answers: string[], correctAnswerIndex: number, onUserAnswer: (correctly: boolean) =>void }) {
+export default function QuestionCard(props: { questionNumber: number, question: string, possible_answers: string[], correctAnswerIndex: number, onUserAnswer: (correctly: boolean) => void }) {
     const CHAR = 'ABCD';
 
     const [isUserAnswered, setIsUserAnswered] = useState(false);
@@ -40,7 +40,8 @@ export default function QuestionCard(props: { questionNumber: number, question: 
 
         return (
             <li key={`answer-${idx}`}>
-                <Button disabled={isUserAnswered}
+                <Button className='mb-2'
+                        disabled={isUserAnswered}
                         color={color}
                         onClick={() => checkAnswer(idx)}
                         dangerouslySetInnerHTML={{__html: `${CHAR[idx]}. ${DOMPurify.sanitize(answer)}`}}></Button>
@@ -51,7 +52,8 @@ export default function QuestionCard(props: { questionNumber: number, question: 
     return (
         <Container>
             <Card>
-                <CardHeader dangerouslySetInnerHTML={{__html: `${props.questionNumber}. ${DOMPurify.sanitize(props.question)}`}}></CardHeader>
+                <CardHeader
+                    dangerouslySetInnerHTML={{__html: `${props.questionNumber}. ${DOMPurify.sanitize(props.question)}`}}></CardHeader>
                 <CardBody>
                     <ul className="Answer-list">
                         {props.possible_answers.map((answer, idx) => (
