@@ -14,6 +14,21 @@ export default function QuestionList(props: { listOfQuestions: Question[] }) {
         }
     }
 
+    function renderScore() {
+        if (questionList.length !== 0) {
+            return (
+                <Row className='justify-content-center'>
+                    <Col xs={8} md={4} lg={4}>
+                        <Alert
+                            color="dark">{questionList.length !== 0 ? `Score: ${correctAnswer}/${questionList.length}` : ''} </Alert>
+                    </Col>
+                </Row>
+            )
+        }
+        
+        return null;
+    }
+
     useEffect(() => {
         setQuestionList(props.listOfQuestions);
     }, [props.listOfQuestions])
@@ -36,12 +51,7 @@ export default function QuestionList(props: { listOfQuestions: Question[] }) {
                 </Col>
             </Row>
 
-            <Row className='justify-content-center'>
-                <Col xs={8} md={4} lg={4}>
-                    <Alert color="dark">{questionList.length !== 0 ? `Score: ${correctAnswer}/${questionList.length}` : ''} </Alert>
-                </Col>
-            </Row>
-
+            {renderScore()}
         </Container>
     )
 }
