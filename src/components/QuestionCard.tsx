@@ -1,6 +1,6 @@
 import DOMPurify from "dompurify";
 import React, {useState} from "react";
-import {Button} from "reactstrap";
+import {Button, Card, CardBody, CardHeader, Container} from "reactstrap";
 
 export default function QuestionCard(props: { questionNumber: number, question: string, possible_answers: string[], correctAnswerIndex: number, onUserAnswer: (correctly: boolean) =>void }) {
     const CHAR = 'ABCD';
@@ -49,13 +49,17 @@ export default function QuestionCard(props: { questionNumber: number, question: 
     }
 
     return (
-        <div>
-            <h3 dangerouslySetInnerHTML={{__html: `${props.questionNumber}. ${DOMPurify.sanitize(props.question)}`}}></h3>
-            <ul className="Answer-list">
-                {props.possible_answers.map((answer, idx) => (
-                    renderAnswer(idx, answer)
-                ))}
-            </ul>
-        </div>
+        <Container>
+            <Card>
+                <CardHeader dangerouslySetInnerHTML={{__html: `${props.questionNumber}. ${DOMPurify.sanitize(props.question)}`}}></CardHeader>
+                <CardBody>
+                    <ul className="Answer-list">
+                        {props.possible_answers.map((answer, idx) => (
+                            renderAnswer(idx, answer)
+                        ))}
+                    </ul>
+                </CardBody>
+            </Card>
+        </Container>
     )
 }
