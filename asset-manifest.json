@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/SimpleReactQuizApp/static/css/main.c99598a4.chunk.css",
-    "main.js": "/SimpleReactQuizApp/static/js/main.b82f58e3.chunk.js",
-    "main.js.map": "/SimpleReactQuizApp/static/js/main.b82f58e3.chunk.js.map",
-    "runtime-main.js": "/SimpleReactQuizApp/static/js/runtime-main.63716570.js",
-    "runtime-main.js.map": "/SimpleReactQuizApp/static/js/runtime-main.63716570.js.map",
+    "main.js": "/SimpleReactQuizApp/static/js/main.e708dd77.chunk.js",
+    "main.js.map": "/SimpleReactQuizApp/static/js/main.e708dd77.chunk.js.map",
+    "runtime-main.js": "/SimpleReactQuizApp/static/js/runtime-main.91777c58.js",
+    "runtime-main.js.map": "/SimpleReactQuizApp/static/js/runtime-main.91777c58.js.map",
     "static/css/2.1a02f21c.chunk.css": "/SimpleReactQuizApp/static/css/2.1a02f21c.chunk.css",
-    "static/js/2.8890e17e.chunk.js": "/SimpleReactQuizApp/static/js/2.8890e17e.chunk.js",
-    "static/js/2.8890e17e.chunk.js.map": "/SimpleReactQuizApp/static/js/2.8890e17e.chunk.js.map",
-    "static/js/3.3bd017cf.chunk.js": "/SimpleReactQuizApp/static/js/3.3bd017cf.chunk.js",
-    "static/js/3.3bd017cf.chunk.js.map": "/SimpleReactQuizApp/static/js/3.3bd017cf.chunk.js.map",
+    "static/js/2.0caf828b.chunk.js": "/SimpleReactQuizApp/static/js/2.0caf828b.chunk.js",
+    "static/js/2.0caf828b.chunk.js.map": "/SimpleReactQuizApp/static/js/2.0caf828b.chunk.js.map",
+    "static/js/3.b20e7931.chunk.js": "/SimpleReactQuizApp/static/js/3.b20e7931.chunk.js",
+    "static/js/3.b20e7931.chunk.js.map": "/SimpleReactQuizApp/static/js/3.b20e7931.chunk.js.map",
     "index.html": "/SimpleReactQuizApp/index.html",
     "static/css/2.1a02f21c.chunk.css.map": "/SimpleReactQuizApp/static/css/2.1a02f21c.chunk.css.map",
     "static/css/main.c99598a4.chunk.css.map": "/SimpleReactQuizApp/static/css/main.c99598a4.chunk.css.map",
-    "static/js/2.8890e17e.chunk.js.LICENSE.txt": "/SimpleReactQuizApp/static/js/2.8890e17e.chunk.js.LICENSE.txt",
+    "static/js/2.0caf828b.chunk.js.LICENSE.txt": "/SimpleReactQuizApp/static/js/2.0caf828b.chunk.js.LICENSE.txt",
     "static/media/index.css": "/SimpleReactQuizApp/static/media/bg-image.d697e314.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.63716570.js",
+    "static/js/runtime-main.91777c58.js",
     "static/css/2.1a02f21c.chunk.css",
-    "static/js/2.8890e17e.chunk.js",
+    "static/js/2.0caf828b.chunk.js",
     "static/css/main.c99598a4.chunk.css",
-    "static/js/main.b82f58e3.chunk.js"
+    "static/js/main.e708dd77.chunk.js"
   ]
 }
