@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import './App.css';
-import {QuestionRequestResult} from "./interface/QuestionRequestResult";
+import BackgroundImage from './images/bg-image.jpg';
 import QuestionList from "./components/QuestionList";
 import Question from "./model/Question";
+import {Button} from "reactstrap";
 
 function App() {
     const [questions, setQuestions] = useState<Question[]>([]);
@@ -24,7 +25,7 @@ function App() {
 
     const renderStartButton = () => {
         if (questions.length <= 0) {
-            return <button onClick={() => loadQuestions()}>Start</button>;
+            return <Button onClick={() => loadQuestions()}>Start</Button>;
         }
     }
 
