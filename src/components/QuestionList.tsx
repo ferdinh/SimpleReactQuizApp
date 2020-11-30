@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Question from "../model/Question";
 import QuestionCard from "./QuestionCard";
-import {Col, Container, Row} from "reactstrap";
+import {Alert, Col, Container, Row} from "reactstrap";
 
 
 export default function QuestionList(props: { listOfQuestions: Question[] }) {
@@ -36,9 +36,9 @@ export default function QuestionList(props: { listOfQuestions: Question[] }) {
                 </Col>
             </Row>
 
-            <Row>
-                <Col>
-                    <p>{questionList.length !== 0 ? `Score: ${correctAnswer}/${questionList.length}` : ''} </p>
+            <Row className='justify-content-center'>
+                <Col xs={8} md={4} lg={4}>
+                    <Alert color="dark">{questionList.length !== 0 ? `Score: ${correctAnswer}/${questionList.length}` : ''} </Alert>
                 </Col>
             </Row>
 
